@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-library项目 - 官方 Z-lib镜像网址及入口.免费下载电子书</title>
+ <meta name="keywords" content="zlibrary，zlibrary入口，zlibrary镜像网址，zlibrary镜像，zlibrary中文入口，zlibrary官网，zlibrary客户端下载" />
+<meta name="description" content="Z-Library 是全球最大的数字图书馆之一，成立于2009年，提供超过2300万册电子书和8400万篇学术期刊文章，涵盖全学科领域，致力于降低知识获取门槛，推动教育平等。">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 4px;
+        }
+
+        .dark::-webkit-scrollbar-thumb {
+            background: #4b5563;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hover-card {
+            transition: all 0.3s;
+        }
+
+        .hover-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .hover-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-hover {
+            transition: all 0.2s;
+        }
+
+        .btn-hover:hover {
+            transform: scale(1.05);
+        }
+
+        .section-fade {
+            opacity: 0;
+            transition: opacity 0.6s, transform 0.6s;
+            transform: translateY(20px);
+        }
+
+        .section-fade.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-sm backdrop-blur-sm bg-opacity-90 dark:bg-opacity-90">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-book-open text-primary-600 dark:text-primary-400 text-2xl"></i>
+                <h1 class="text-xl font-bold">Z-Library</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" id="theme-toggle">
+                    <i class="fas fa-sun text-yellow-500 dark:hidden"></i>
+                    <i class="fas fa-moon text-blue-300 hidden dark:block"></i>
+                </button>
+                <a href="https://pan.quark.cn/s/45d1c03ef62b" target="_blank" class="hidden md:block bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-md transition-colors btn-hover">
+                  <i class="fas fa-download mr-2"></i>客户端下载
+                </a>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto px-4 py-8 max-w-5xl">
+        <section class="mb-16 section-fade">
+            <div class="bg-gradient-to-r from-primary-600 to-blue-700 rounded-2xl p-8 md:p-12 text-white shadow-lg">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">全球最大的数字图书馆</h1>
+                <p class="text-lg md:text-xl opacity-90 max-w-3xl">ZLibrary提供超过2300万册电子书和8400万篇学术期刊文章，涵盖全学科领域，致力于降低知识获取门槛，推动教育平等。</p>
+
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a class="bg-white bg-opacity-20 hover:bg-opacity-30 px-6 py-3 rounded-lg font-medium transition-all btn-hover" href="#access">
+                        <i class="fas fa-globe mr-2"></i>官网/镜像入口
+                    </a>
+                    <a class="bg-white bg-opacity-20 hover:bg-opacity-30 px-6 py-3 rounded-lg font-medium transition-all btn-hover" href="#features">
+                        <i class="fas fa-star mr-2"></i>核心功能
+                    </a>
+                    <a class="bg-white bg-opacity-20 hover:bg-opacity-30 px-6 py-3 rounded-lg font-medium transition-all btn-hover" href="#history">
+                        <i class="fas fa-history mr-2"></i>发展历程
+                    </a>
+
+                    <a class="bg-white bg-opacity-20 hover:bg-opacity-30 px-6 py-3 rounded-lg font-medium transition-all btn-hover" href="#xiazai">
+                        <i class="fas fa-xiazai mr-2"></i>客户端下载
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16 section-fade" id="access">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-4">
+                    <i class="fas fa-globe text-primary-600 dark:text-primary-400 text-xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold">官网入口与镜像网址</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+
+<div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mr-3">
+                            <i class="fas fa-unlock text-green-600 dark:text-green-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">国内镜像站</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">无需梯子即可访问：</p>
+                    <div class="space-y-3">
+                        <a class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-600" href="https://www.imi123.cn/sites/503.html" target="_blank">
+                            <i class="fas fa-link text-green-500 mr-3"></i>
+                            <span>https://www.imi123.cn/（永久入口）</span>
+                        </a>
+                        <a class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-600" href="https://z-library.zlibry.online/" target="_blank">
+                            <i class="fas fa-link text-green-500 mr-3"></i>
+                            <span>https://z-library.zlibry.online/</span>
+                        </a>
+                        <a class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-600" href="https://z-libraryurl.github.io/" target="_blank">
+                            <i class="fas fa-link text-green-500 mr-3"></i>
+                            <span>https://z-libraryurl.github.io/</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-3">
+                            <i class="fas fa-lock text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">官方入口</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">需使用网络加速工具（梯子）访问：</p>
+                    <div class="space-y-3">
+                        <a class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-600" href="https://z-library.sk" target="_blank">
+                            <i class="fas fa-link text-primary-500 mr-3"></i>
+                            <span>https://z-library.sk</span>
+                        </a>
+                        <a class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-600" href="https://zh.z-lib.gs" target="_blank">
+                            <i class="fas fa-link text-primary-500 mr-3"></i>
+                            <span>https://zh.z-lib.gs</span>
+                        </a>
+                        <a class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-600" href="https://zh.z-lib.gd/ " target="_blank">
+                            <i class="fas fa-link text-primary-500 mr-3"></i>
+                            <span>https://zh.z-lib.gd/ </span>
+                        </a>
+
+                    </div>
+                </div>
+                
+            </div>
+            <div class="mt-8 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-3">
+                        <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold">动态获取最新地址</h3>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">为了获取最新可用链接，您可以：</p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-3 mt-1">
+                            <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">邮件订阅</h4>
+                            <p class="text-gray-700 dark:text-gray-300">发送邮件至 <span class="font-mono">blackbox@1delivery.re</span>，自动回复最新可用链接。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-3 mt-1">
+                            <i class="fab fa-telegram text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">电报频道</h4>
+                            <p class="text-gray-700 dark:text-gray-300">关注官方Telegram频道 <span class="font-mono">Z-Access</span> 或中文电报群，获取最新动态。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mb-16 section-fade" id="features">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-4">
+                    <i class="fas fa-cogs text-primary-600 dark:text-primary-400 text-xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold">网站功能</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-3">
+                            <i class="fas fa-database text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">资源规模</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300">截至2024年，ZLibrary拥有超过2300万册电子书和8400万篇学术期刊文章，涵盖文学、科技、历史等全学科领域。所有资源支持PDF、EPUB、MOBI等多种格式下载，并提供批量下载、断点续传功能。</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mr-3">
+                            <i class="fas fa-search text-green-600 dark:text-green-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">搜索与筛选</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300">支持关键词搜索，可按语言、年份、文件类型等条件精准筛选，帮助用户快速找到所需资源。</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center mr-3">
+                            <i class="fas fa-user-cog text-purple-600 dark:text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">用户管理</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300">注册后可在"我的书架"管理下载内容，同步阅读进度，并导出笔记，方便用户整理和回顾学习资料。</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center mr-3">
+                            <i class="fas fa-tools text-red-600 dark:text-red-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">辅助工具</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300">提供书签、翻译、朗读、自定义阅读模式等实用工具，提升阅读体验和学习效率。</p>
+                </div>
+            </div>
+            <div class="mt-8 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 rounded-full bg-yellow-100 dark:bg-yellow-900 flex items-center justify-center mr-3">
+                        <i class="fas fa-download text-yellow-600 dark:text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold">下载限制</h3>
+                </div>
+                <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start">
+                        <i class="fas fa-circle text-xs mt-1.5 mr-2 text-primary-500"></i>
+                        <span>未注册用户每日每IP限下载5次</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-circle text-xs mt-1.5 mr-2 text-primary-500"></i>
+                        <span>注册用户提升至10次</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-circle text-xs mt-1.5 mr-2 text-primary-500"></i>
+                        <span>捐赠用户可提高限额（具体额度不固定）</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-circle text-xs mt-1.5 mr-2 text-primary-500"></i>
+                        <span>客户端用户每日可下载20本，国内用户可直接使用</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section class="mb-16 section-fade" id="history">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-4">
+                    <i class="fas fa-history text-primary-600 dark:text-primary-400 text-xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold">发展历程</h2>
+            </div>
+            <div class="relative overflow-hidden bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover-card">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary-100 dark:bg-primary-900 opacity-10 rounded-bl-full"></div>
+                <div class="relative z-10">
+                    <div class="flex flex-col md:flex-row items-start md:items-center mb-8">
+                        <div class="w-16 h-16 rounded-full bg-primary-600 flex items-center justify-center text-white mb-4 md:mb-0 md:mr-6">
+                            <span class="text-xl font-bold">2009</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">成立时间</h3>
+                            <p class="text-gray-700 dark:text-gray-300">由志愿者和捐赠者共同创建，定位为非营利性平台，致力于知识平等共享。</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:items-center mb-8">
+                        <div class="w-16 h-16 rounded-full bg-primary-600 flex items-center justify-center text-white mb-4 md:mb-0 md:mr-6">
+                            <span class="text-xl font-bold">2010-2015</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">早期定位</h3>
+                            <p class="text-gray-700 dark:text-gray-300">最初作为Library Genesis的镜像站，后独立发展为综合性资源库，逐渐形成自己的特色和用户群体。</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:items-center mb-8">
+                        <div class="w-16 h-16 rounded-full bg-primary-600 flex items-center justify-center text-white mb-4 md:mb-0 md:mr-6">
+                            <span class="text-xl font-bold">2016-2020</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">运营模式</h3>
+                            <p class="text-gray-700 dark:text-gray-300">依赖用户上传、捐赠及志愿维护，强调"知识平等共享"的理念，吸引了全球大量志愿者参与内容维护和社区建设。</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:items-center">
+                        <div class="w-16 h-16 rounded-full bg-primary-600 flex items-center justify-center text-white mb-4 md:mb-0 md:mr-6">
+                            <span class="text-xl font-bold">2021-至今</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">域名变动</h3>
+                            <p class="text-gray-700 dark:text-gray-300">因版权争议，官网域名频繁变更，需通过镜像站或客户端稳定访问。平台持续更新技术架构和访问方式，致力于突破访问限制，降低知识获取门槛。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mb-16 section-fade"  id="xiazai">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-4">
+                    <i class="fas fa-mobile-alt text-primary-600 dark:text-primary-400 text-xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold">客户端与安全提示</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center mr-3">
+                            <i class="fas fa-download text-purple-600 dark:text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">客户端下载</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">ZLibrary官方提供多平台客户端：</p>
+                    <div class="space-y-3">
+                        <a class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-600" href="https://pan.quark.cn/s/3231f196278d" target="_blank">
+                            <i class="fas fa-cloud-download-alt text-purple-500 mr-3"></i>
+                            <span>网盘链接（含Windows/Mac/安卓等）</span>
+                        </a>
+                        <a class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-600" href="https://pan.quark.cn/s/45d1c03ef62b">
+                            <i class="fas fa-file-archive text-purple-500 mr-3"></i>
+                            <span>官方安装包（分系统版本）</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center mr-3">
+                            <i class="fas fa-exclamation-triangle text-red-600 dark:text-red-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">注意事项</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center mr-3 mt-1">
+                                <i class="fas fa-shield-alt text-red-600 dark:text-red-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">警惕钓鱼网站</h4>
+                                <p class="text-gray-700 dark:text-gray-300">优先使用客户端或可靠镜像，避免访问不明来源的链接。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center mr-3 mt-1">
+                                <i class="fas fa-server text-red-600 dark:text-red-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">镜像站稳定性</h4>
+                                <p class="text-gray-700 dark:text-gray-300">部分镜像站为"非官方反代"，可能存在稳定性问题，请谨慎选择。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mb-16 section-fade">
+            <div class="bg-gradient-to-r from-primary-600 to-blue-700 rounded-2xl p-8 text-white shadow-lg">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Z-Library的核心目标</h2>
+                <p class="text-lg max-w-3xl mb-6">ZLibrary通过持续更新技术架构和访问方式，致力于突破访问限制，其核心目标始终是降低知识获取门槛，推动教育平等。</p>
+                <div class="flex flex-wrap gap-4">
+                    <a class="bg-white bg-opacity-20 hover:bg-opacity-30 px-6 py-3 rounded-lg font-medium transition-colors btn-hover" href="https://www.imi123.cn/sites/503.html">
+                        <i class="fas fa-book mr-2"></i>官网入口
+                    </a>
+                    <a class="bg-white bg-opacity-20 hover:bg-opacity-30 px-6 py-3 rounded-lg font-medium transition-colors btn-hover" href="https://pan.quark.cn/s/45d1c03ef62b ">
+                        <i class="fas fa-heart mr-2"></i>客户端下载
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-100 dark:bg-gray-800 py-8 border-t border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-book-open text-primary-600 dark:text-primary-400 text-2xl"></i>
+                        <h2 class="text-xl font-bold">Z-Library - 全球最大的数字图书馆</h2>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2">觉得很不错？那就按住Ctrl+D键组合，把本网站加入你的浏览器收藏夹吧！</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="text-gray-600 dark:text-gray-400 mb-2">© 2025 ZLibrary数字图书馆</div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 text-center text-gray-500 dark:text-gray-400 text-sm">
+                © 2025 Z-Library数字图书馆。
+            </div>
+        </div>
+    </footer>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+        const sections = document.querySelectorAll('.section-fade');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
+    
